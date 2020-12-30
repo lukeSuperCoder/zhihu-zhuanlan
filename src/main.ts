@@ -1,30 +1,8 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from './views/Home.vue'
-import Login from './views/Login.vue'
-import ColumnDetail from './views/ColumnDetail.vue'
+import router from './router'
+import store from './store'
 import App from './App.vue'
-const routerHistory = createWebHistory()
-const router = createRouter({
-  history: routerHistory,
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/Login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/column/:id',
-      name: 'column',
-      component: ColumnDetail
-    }
-  ]
-})
 const app = createApp(App)
 app.use(router)
+app.use(store)
 app.mount('#app')

@@ -17,52 +17,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import ColumnList, { ColumnProps } from '../components/ColumnList.vue'
-const testdata: ColumnProps[] = [
-  {
-    id: 1,
-    title: 'test1的专栏',
-    description: '这是的test1专栏，有一段非常有意思的简介，可以更新一下欧',
-    avatar: 'http://vue-maker.oss-cn-hangzhou.aliyuncs.com/vue-marker/5ee22dd58b3c4520912b9470.jpg?x-oss-process=image/resize,m_pad,h_100,w_100'
-  },
-  {
-    id: 2,
-    title: 'test2的专栏',
-    description: '这是的test2专栏，有一段非常有意思的简介，可以更新一下欧',
-    avatar: 'http://vue-maker.oss-cn-hangzhou.aliyuncs.com/vue-marker/5ee22dd58b3c4520912b9470.jpg?x-oss-process=image/resize,m_pad,h_100,w_100'
-  },
-  {
-    id: 3,
-    title: 'test2的专栏',
-    description: '这是的test2专栏，有一段非常有意思的简介，可以更新一下欧'
-  },
-  {
-    id: 4,
-    title: 'test2的专栏',
-    description: '这是的test2专栏，有一段非常有意思的简介，可以更新一下欧',
-    avatar: 'http://vue-maker.oss-cn-hangzhou.aliyuncs.com/vue-marker/5ee22dd58b3c4520912b9470.jpg?x-oss-process=image/resize,m_pad,h_100,w_100'
-  },
-  {
-    id: 5,
-    title: 'test2的专栏',
-    description: '这是的test2专栏，有一段非常有意思的简介，可以更新一下欧'
-  },
-  {
-    id: 6,
-    title: 'test2的专栏',
-    description: '这是的test2专栏，有一段非常有意思的简介，可以更新一下欧',
-    avatar: 'http://vue-maker.oss-cn-hangzhou.aliyuncs.com/vue-marker/5ee22dd58b3c4520912b9470.jpg?x-oss-process=image/resize,m_pad,h_100,w_100'
-  }
-]
+import { defineComponent, computed } from 'vue'
+import { useStore } from 'vuex'
+import { GlobalDataProps } from '../store'
+import ColumnList from '../components/ColumnList.vue'
 export default defineComponent({
   name: 'Home',
   components: {
     ColumnList
   },
   setup () {
+    const store = useStore<GlobalDataProps>()
+    const list = store.state.columns
+    const columnlen = computed(() => store.getters.biggerColumnsLen)
     return {
-      list: testdata
+      list: list,
+      store
     }
   }
 })
