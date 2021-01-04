@@ -29,22 +29,18 @@ npm run serve
 * 项目在线文档：[http://docs.vikingship.xyz/](http://docs.vikingship.xyz/)
 * 完成的组件库展示：[http://showcase.vikingship.xyz/](http://showcase.vikingship.xyz/)
 * 流程图和原型图
-* 购买后直接可以接入使用的真实后端API
 
 
-## 双分支代码结构
+## 知识点
 
-* master 默认分支完全按照课程的小结的代码，里面并没有完成留个同学们的作业或者是一些功能
-* develop 开发分支拥有完整的功能，也是线上部署的版本，完成所有任务和样式调整，供学生们参考。
-知识点
-#Typescript
+# Typescript
 * 简单类型
 * 复杂类型
 * 接口-Interface
 * 类 - Class
 * 泛型 - Generics
 * 声明文件
-#Vue3
+# Vue3
 * Ref 和 Reactive
 * watch 和 computed
 * 生命周期
@@ -52,31 +48,31 @@ npm run serve
 * Teleport 和 Suspense
 * 全局 API 修改
 * 复杂组件设计和实现
-#Vue Router
+# Vue Router
 * 基本用法
 * 动态路由匹配
 * 导航守卫
 * 路由元信息
-#Vuex
+# Vuex
 * 基本概念
 * State
 * Getter
 * Mutation
 * Action
 * 中大型Store 结构设计与实现
-#前后端结合
+# 前后端结合
 * Axios 基础和用法
 * swagger 在线调试异步请求
 * JSON web token 实现权限验证
 * axios 拦截器实现全局处理
 * 前端缓存设计与实现
 * 文件上传原理和组件实现
-#项目部署
+# 项目部署
 * 生产环境概念
 * 构建代码
 * 部署到云主机
 * 使用脚本自动部署
-#更多内容
+# 更多内容
 * Bootstrap 基础和用法
 * Vue cli 用法
 * Restful API 设计理念
