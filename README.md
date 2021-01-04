@@ -18,33 +18,11 @@ npm install
 
 ### 运行本地开发环境
 
-**特别注意，我的源代码后端是本地后端，你直接运行会报错，如果在本地运行，要使用慕课网的防盗 API, 可以在 main.ts 拦截器中一劳永逸的添加**
-
-```javascript
-// 替换 baseURL
-axios.defaults.baseURL = 'http://apis.imooc.com/api/'
-// 下面的 icode 值是从慕课网获取的 token 值，可以在课程右侧的项目接口校验码找到
-axios.interceptors.request.use(config => {
-  ... 其他代码
-  // get 请求，添加到 url 中
-  config.params = { ...config.params, icode: '******' }
-  // 其他请求，添加到 body 中
-  // 如果是上传文件，添加到 FormData 中
-  if (config.data instanceof FormData) {
-    config.data.append('icode', '******')
-  } else {
-  // 普通的 body 对象，添加到 data 中
-    config.data = { ...config.data, icode: '******' }
-  }
-  return config
-})
-```
-
 ```
 npm run serve
 ```
 
-## 课程与服务
+## 服务
 
 * **项目演示站点：[http://zhihu.vikingship.xyz/](http://zhihu.vikingship.xyz/)**
 * 在线后端API 查询和使用站点：[http://api.vikingship.xyz/](http://api.vikingship.xyz/)
@@ -52,9 +30,53 @@ npm run serve
 * 完成的组件库展示：[http://showcase.vikingship.xyz/](http://showcase.vikingship.xyz/)
 * 流程图和原型图
 * 购买后直接可以接入使用的真实后端API
-* **如果您想学习本课程，请支持正版，谢谢！ [https://coding.imooc.com/class/449.html](https://coding.imooc.com/class/449.html)**
+
 
 ## 双分支代码结构
 
 * master 默认分支完全按照课程的小结的代码，里面并没有完成留个同学们的作业或者是一些功能
 * develop 开发分支拥有完整的功能，也是线上部署的版本，完成所有任务和样式调整，供学生们参考。
+知识点
+#Typescript
+* 简单类型
+* 复杂类型
+* 接口-Interface
+* 类 - Class
+* 泛型 - Generics
+* 声明文件
+#Vue3
+* Ref 和 Reactive
+* watch 和 computed
+* 生命周期
+* 自定义函数 Hooks
+* Teleport 和 Suspense
+* 全局 API 修改
+* 复杂组件设计和实现
+#Vue Router
+* 基本用法
+* 动态路由匹配
+* 导航守卫
+* 路由元信息
+#Vuex
+* 基本概念
+* State
+* Getter
+* Mutation
+* Action
+* 中大型Store 结构设计与实现
+#前后端结合
+* Axios 基础和用法
+* swagger 在线调试异步请求
+* JSON web token 实现权限验证
+* axios 拦截器实现全局处理
+* 前端缓存设计与实现
+* 文件上传原理和组件实现
+#项目部署
+* 生产环境概念
+* 构建代码
+* 部署到云主机
+* 使用脚本自动部署
+#更多内容
+* Bootstrap 基础和用法
+* Vue cli 用法
+* Restful API 设计理念
