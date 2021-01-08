@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent } from 'vue'
 import { useStore } from 'vuex'
 import { GlobalDataProps } from '../store'
 import ColumnList from '../components/ColumnList.vue'
@@ -29,7 +29,7 @@ export default defineComponent({
   setup () {
     const store = useStore<GlobalDataProps>()
     const list = store.state.columns
-    const columnlen = computed(() => store.getters.biggerColumnsLen)
+    // const columnlen = computed(() => store.getters.biggerColumnsLen)
     return {
       list: list,
       store
